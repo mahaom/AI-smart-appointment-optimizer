@@ -1,0 +1,7 @@
+api-endpoints-swagger.png  Backend API endpoints for analytics and AI scoring.
+ai-risk-scoring-execution.png  Execution of batch AI scoring updating appointment risk levels.
+appointments-with-risk-scores.png  Appointment records enriched with AI risk_score and risk_tier.
+dashboard-overview.png  Dashboard summarizing analytics and recent appointments.
+trend.png  No show rate trend over time.
+dow.png  No show rate by day of week.
+appointments.png  Recent appointments with predicted risk levels.
