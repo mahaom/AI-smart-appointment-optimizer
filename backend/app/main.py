@@ -5,6 +5,7 @@ from app.models.db import engine, Base
 from app.models import appointment, reminder, user, audit_log
 from app.api.routes import appointments
 from app.api.routes.appointments import router as appointments_router
+from app.api.routes.seed import router as seed_router
 
 
 setup_logging()
@@ -15,6 +16,7 @@ Base.metadata.create_all(bind=engine)
 
 app.include_router(appointments.router)
 
+app.include_router(seed_router)
 
 @app.get("/")
 def root():

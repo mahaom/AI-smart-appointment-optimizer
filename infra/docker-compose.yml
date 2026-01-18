@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:16
+    container_name: appt_db
+    environment:
+      POSTGRES_DB: appt_optimizer
+      POSTGRES_USER: appt_user
+      POSTGRES_PASSWORD: appt_pass
+    ports:
+      - "5432:5432"
+    volumes:
+      - appt_db_data:/var/lib/postgresql/data
+
+volumes:
+  appt_db_data:
