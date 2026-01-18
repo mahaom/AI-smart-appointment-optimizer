@@ -7,6 +7,7 @@ from app.api.routes import appointments
 from app.api.routes.appointments import router as appointments_router
 from app.api.routes.seed import router as seed_router
 from app.api.routes.scoring import router as scoring_router
+from app.api.routes.analytics import router as analytics_router
 
 
 setup_logging()
@@ -20,6 +21,9 @@ app.include_router(appointments.router)
 app.include_router(seed_router)
 
 app.include_router(scoring_router)
+
+app.include_router(analytics_router)
+
 
 @app.get("/")
 def root():
