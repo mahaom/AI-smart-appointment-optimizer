@@ -8,11 +8,21 @@ from app.api.routes.appointments import router as appointments_router
 from app.api.routes.seed import router as seed_router
 from app.api.routes.scoring import router as scoring_router
 from app.api.routes.analytics import router as analytics_router
+from fastapi.middleware.cors import CORSMiddleware
+
 
 
 setup_logging()
 
 app = FastAPI(title=settings.app_name)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 Base.metadata.create_all(bind=engine)
 
