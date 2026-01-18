@@ -1,10 +1,20 @@
 from fastapi import FastAPI
 from app.core.config import settings
 from app.core.logging import setup_logging
+from app.models.db import engine, Base
+from app.models import appointment, reminder, user, audit_log
+from app.api.routes import appointments
+from app.api.routes.appointments import router as appointments_router
+
 
 setup_logging()
 
 app = FastAPI(title=settings.app_name)
+
+Base.metadata.create_all(bind=engine)
+
+app.include_router(appointments.router)
+
 
 @app.get("/")
 def root():
