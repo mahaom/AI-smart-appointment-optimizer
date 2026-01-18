@@ -39,6 +39,8 @@ The system predicts the likelihood of appointment no shows, assigns interpretabl
 
 The platform is implemented as a decoupled system with a backend API and a frontend dashboard.
 
+![System Architecture](docs/architecture-diagram.png)
+
 ### Backend
 
 1. REST API for appointments, analytics, seeding, and AI batch scoring
